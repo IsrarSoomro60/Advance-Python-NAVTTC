@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book List</title>
+    <style>
+        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+        th, td { padding: 10px; border: 1px solid black; text-align: center; }
+    </style>
+</head>
+<body>
+
+<h2>Book Management System</h2>
+
+<form method="get" action="/">
+    <input type="text" name="search" value="{{ keyword }}" placeholder="Search title or author">
+    <button type="submit">Search</button>
+    <a href="/">Show All</a>
+</form>
+
+<br>
+<a href="/add">Add New Book</a>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Price</th>
+        <th>Published Year</th>
+        <th>Created At</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for b in books %}
+    <tr>
+        <td>{{ b[0] }}</td>
+        <td>{{ b[1] }}</td>
+        <td>{{ b[2] }}</td>
+        <td>{{ b[3] }}</td>
+        <td>{{ b[4] }}</td>
+        <td>{{ b[5] }}</td>
+        <td>
+            <a href="/edit/{{ b[0] }}">Edit</a> |
+            <a href="/delete/{{ b[0] }}" onclick="return confirm('Delete this book?')">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
+
+
+
+

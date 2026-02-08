@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Book</title>
+</head>
+<body>
+
+<h2>Edit Book</h2>
+
+<form method="post">
+
+    <label>Title:</label><br>
+    <input type="text" name="title" value="{{ book[1] }}" required><br><br>
+
+    <label>Author:</label><br>
+    <input type="text" name="author" value="{{ book[2] }}" required><br><br>
+
+    <label>Price:</label><br>
+    <input type="number" name="price" value="{{ book[3] }}"><br><br>
+
+    <label>Published Year:</label><br>
+    <input type="number" name="year" value="{{ book[4] }}"><br><br>
+
+    <button type="submit">Update</button>
+</form>
+
+<br>
+<a href="/">Back</a>
+
+</body>
+</html>
